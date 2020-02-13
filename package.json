@@ -1,0 +1,11 @@
+{
+  "name": "swissKnife",
+  "version": "2.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/acmeScript/swissKnife.git",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "metatests": "^0.7.1"
+  }
+}
