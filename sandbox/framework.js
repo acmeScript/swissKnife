@@ -1,10 +1,11 @@
+'use strict';
 const fs = require('fs');
 const net = require('net');
 const vm = require('vm');
 const timers = require('timers');
 const events = require('events');
 
-const sandboxedFileSystem = require('./lib/main');
+const sandboxedFileSystem = require('./sandbox');
 
 const PARSING_TIMEOUT = 1000;
 const EXECUTION_TIMEOUT = 5000;
@@ -12,8 +13,8 @@ global.api = {};
 api.fs = require('fs');
 api.vm = require('vm');
 api.sandboxedFileSystem = sandboxedFileSystem; 
-const {wrapFunction} = require('./lib/wrapFunction.js');
-const {cloneInterface} = require('./lib/cloneInterface.js');
+const {wrapFunction} = require('../lib/wrapFunction.js');
+const {cloneInterface} = require('../lib/cloneInterface.js');
 
 const log = s => {
     console.log('<<<<<<<<stdout from sanbox start>>>>>>>>>');

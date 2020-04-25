@@ -1,4 +1,4 @@
-'use strict';
+import {names} from './names';
+import submodules from './submodules'
 
-require('./names');
-require('./submodules');
+export {names, submodules}

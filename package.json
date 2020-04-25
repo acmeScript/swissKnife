@@ -6,13 +6,22 @@
   "license": "MIT",
   "scripts": {
     "lint": "eslint .",
-    "test": "node test/all"
+    "start": "node server.js",
+    "vm": "node framework.js",
+    "test": "nodemon test/all --exec babel-node --config config/nodemon-config.json"
   },
+  "type": "module",
   "devDependencies": {
+    "@babel/preset-env": "^7.9.0",
     "eslint": "^6.8.0",
+    "eslint-plugin-security": "^1.4.0",
     "metatests": "^0.7.1"
   },
   "dependencies": {
-    "vm": "^0.1.0"
+    "@babel/core": "^7.9.0",
+    "@babel/node": "^7.8.7",
+    "nodemon": "^2.0.2",
+    "vm": "^0.1.0",
+    "ws": "^7.2.3"
   }
 }

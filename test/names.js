@@ -1,10 +1,8 @@
-'use strict';
-
-const metatests = require('metatests');
-const lib = require('../lib/main.js') //../lib
+import metatests from 'metatests';
+import lib from '../lib/main';
 
 metatests.test('Колличество экспортированных модулей', test => {
-    test.strictSame(Object.keys(lib).length, 9);
+    test.strictSame(Object.keys(lib).length, 10);
     test.end();
 });
 metatests.test('Колличество типов экспортированных библиотек', test => {

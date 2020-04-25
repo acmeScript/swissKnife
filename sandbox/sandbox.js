@@ -21,15 +21,10 @@ const makePathSafe = (path, allowTmp) => {
   if (allowTmp && safePath.startsWith(os.tmpdir())) {
     return safePath;
   }
-
-  // As Windows is the only non-UNIX like platform supported by node
-  // https://github.com/nodejs/node/blob/master/BUILDING.md#supported-platforms-1
   if (isWindows) {
     if (isUncPath(safePath)) {
       return safePath.substring(pathModule.parse(safePath).root.length);
     } else {
-      // If the path is a non-unc path on windows, the root is fixed to 3
-      // characters like 'C:\'
       return safePath.substring(3);
     }
   }
@@ -154,6 +149,7 @@ sandbox.bind = (path, allowTmp = true) => {
       const fn = fs[name];
       if (!fn) continue;
       wrapped[name] = type.wrapper(fn, path, allowTmp);
+      console.log("wrapped name: " + wrapped[name]);
       if (type.hasSyncCounterpart) {
         const syncName = name + 'Sync';
         wrapped[syncName] = type.wrapper(fs[syncName], path, allowTmp);

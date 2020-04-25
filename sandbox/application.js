@@ -4,7 +4,7 @@
 //<<<<<<<<<<Dependency Locator list>>>>>>>>>>>>>>
 const fs = require('fs');
 const net = require('net');
-console.dir(require.main, {depth: 0})
+console.dir(require.main, {depth: 0});
 //<<<<<<<<<<----------------------->>>>>>>>>>>>>>
 /*
 console.log("<<<<<<<<<<<<level: 0 -------------------------------\n")
